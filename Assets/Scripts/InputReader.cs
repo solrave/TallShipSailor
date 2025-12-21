@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class InputReader
 {
-    public bool TurnSailLeftPressed => Input.GetKeyDown(KeyCode.A);
-    public bool TurnSailRightPressed => Input.GetKeyDown(KeyCode.D);
-    public bool TurnWindLeftPressed => Input.GetKeyDown(KeyCode.G);
-    public bool TurnWindRightPressed => Input.GetKeyDown(KeyCode.J);
-    public bool ChangeWind => Input.GetKeyDown(KeyCode.Space);
-}
+    public float RotationInput => Input.GetAxis("Horizontal");
+    public bool RotatingSail => TurnSailLeftPressed && TurnSailRightPressed;
+    public bool RotatingWind => TurnWindLeftPressed && TurnWindRightPressed;
 
-public class InputHandler{}
+    private bool TurnSailLeftPressed => Input.GetKey(KeyCode.A);
+    private bool TurnSailRightPressed => Input.GetKey(KeyCode.D);
+    private bool TurnWindLeftPressed => Input.GetKeyDown(KeyCode.G);
+    private bool TurnWindRightPressed => Input.GetKeyDown(KeyCode.J);
+    
+}

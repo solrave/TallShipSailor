@@ -49,6 +49,7 @@
     <Compile Include="Assets/Scripts/Mover.cs" />
     <Compile Include="Assets/Scripts/InputHandler.cs" />
     <Compile Include="Assets/Scripts/TriggerReceiver.cs" />
+    <Compile Include="Assets/Scripts/Wallet.cs" />
     <Compile Include="Assets/Scripts/GameManager.cs" />
     <Compile Include="Assets/Scripts/Rotator.cs" />
     <Compile Include="Assets/Scripts/WalletManager.cs" />

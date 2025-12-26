@@ -803,7 +803,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 625.8716, y: -13.2677}
+  m_AnchoredPosition: {x: -28, y: -287}
   m_SizeDelta: {x: 146.8623, y: 28.5221}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &414030041
@@ -1019,8 +1019,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -297.1978, y: 124.54783}
-  m_SizeDelta: {x: 276.2006, y: 167.4049}
+  m_AnchoredPosition: {x: -2.9325, y: 119.8895}
+  m_SizeDelta: {x: 409.8293, y: 169.7933}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &535457760
 MonoBehaviour:
@@ -1126,7 +1126,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 625.8716, y: -142.56802}
+  m_AnchoredPosition: {x: 625, y: -287}
   m_SizeDelta: {x: 146.8623, y: 28.5221}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &606695959
@@ -1276,7 +1276,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8bac2632b24eedb9d6b8cd54be0717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _walletView: {fileID: 1509337685}
+  _view: {fileID: 1509337685}
+  _addCoin: {fileID: 1640002577}
+  _addGem: {fileID: 414030041}
+  _addEnergy: {fileID: 606695959}
 --- !u!4 &1185535578
 Transform:
   m_ObjectHideFlags: 0
@@ -1397,17 +1400,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _content: {fileID: 2119959256}
-  _viewData:
+  _itemData:
   - type: 0
     sprite: {fileID: 21300000, guid: 3676a0b185daeb54fb257f700ba7ead4, type: 3}
   - type: 1
     sprite: {fileID: 21300000, guid: e7d29a79bc7fae248887c8a08a160303, type: 3}
   - type: 2
     sprite: {fileID: 21300000, guid: e52ea25af699fd445b7046374f81a5b9, type: 3}
-  _menuItem: {fileID: 2546246054626673672, guid: 3d807e5d0d1779ce9abb6b86aeeee06d, type: 3}
-  _addCoin: {fileID: 1640002577}
-  _addGem: {fileID: 414030041}
-  _addEnergy: {fileID: 606695959}
+  _menuItemPrefab: {fileID: 2546246054626673672, guid: 3d807e5d0d1779ce9abb6b86aeeee06d, type: 3}
 --- !u!4 &1509337686
 Transform:
   m_ObjectHideFlags: 0
@@ -1459,7 +1459,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 625.8716, y: 120.786194}
+  m_AnchoredPosition: {x: -631, y: -287}
   m_SizeDelta: {x: 146.8623, y: 28.5221}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1640002577

@@ -6,7 +6,7 @@ using UnityEngine.UI;
     public class MenuItem : MonoBehaviour
     {
         public ItemType Type { get; private set; }
-        public int Amount { get; private set; }
+        private int Amount { get; set; }
         [SerializeField] private Image _icon;
         [SerializeField] private  TMP_Text _description;
         [SerializeField] private  TMP_Text _amount;
@@ -18,13 +18,11 @@ using UnityEngine.UI;
             _icon.sprite = sprite;
             _description.text = Type.ToString();
             _amount.text = Amount.ToString();
-
         }
 
-        public void AddAmount(int amount)
+        public void ChangeAmount(int amount)
         {
-            if (amount > 0)
-                Amount += amount;
+            Amount = amount;
             _amount.text = Amount.ToString();
         }
     }

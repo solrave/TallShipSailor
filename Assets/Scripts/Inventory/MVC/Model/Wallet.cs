@@ -1,14 +1,16 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class Wallet
 {
     public Action<ItemType, int> AmountChanged;
     
     public IReadOnlyDictionary<ItemType, int> MyWallet => _myWallet;
+    
     private Dictionary<ItemType, int> _myWallet = new Dictionary<ItemType, int>();
+    
     private UIView _view;
+    
     public Wallet(UIView view)
     {
         _view = view;
@@ -17,21 +19,19 @@ public class Wallet
         _myWallet.Add(ItemType.Energy, 1);
     }
 
-    public void AddCoin()
+    public void AddItem(ItemType type, int amount)
     {
-        _myWallet[ItemType.Coin] += 1;
-        AmountChanged?.Invoke(ItemType.Coin, _myWallet[ItemType.Coin]);
+        _myWallet[type] += 1;
+        AmountChanged?.Invoke(type, _myWallet[type]);
     }
     
-    public void AddGem()
+    public void TakeItem(ItemType type, int amount)
     {
-        _myWallet[ItemType.Gem] += 1;
-        AmountChanged?.Invoke(ItemType.Gem, _myWallet[ItemType.Gem]);
+        if (_myWallet[type] > 0)
+        {
+            _myWallet[type] -= 1;
+        }
+        AmountChanged?.Invoke(type, _myWallet[type]);
     }
     
-    public void AddEnergy()
-    {
-        _myWallet[ItemType.Energy] += 1;
-        AmountChanged?.Invoke(ItemType.Energy, _myWallet[ItemType.Energy]);
-    }
 }

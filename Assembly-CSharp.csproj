@@ -47,11 +47,12 @@
   <ItemGroup>
     <Compile Include="Assets/Scripts/Inventory/Input/InputReader.cs" />
     <Compile Include="Assets/Scripts/Inventory/TriggerReceiver.cs" />
-    <Compile Include="Assets/Scripts/Inventory/MVC/Controller/Controller.cs" />
     <Compile Include="Assets/Scripts/Inventory/MVC/View/ItemViewData.cs" />
     <Compile Include="Assets/Scripts/Inventory/MVC/View/UIView.cs" />
     <Compile Include="Assets/Scripts/Inventory/MVC/View/MenuItem.cs" />
+    <Compile Include="Assets/Scripts/Inventory/MVC/Controller/EntryPoint.cs" />
     <Compile Include="Assets/Scripts/Inventory/MVC/Model/ItemType.cs" />
+    <Compile Include="Assets/Scripts/Inventory/MVC/View/ItemButtonView.cs" />
     <Compile Include="Assets/Scripts/Inventory/MVC/Model/Wallet.cs" />
     <Compile Include="Assets/Scripts/Inventory/Input/InputHandler.cs" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

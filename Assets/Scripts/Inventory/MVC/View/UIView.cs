@@ -5,43 +5,36 @@ using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
-    public class UIView : MonoBehaviour
+public class UIView : MonoBehaviour
+{
+    [SerializeField] private RectTransform _content;
+    [SerializeField] private List<ItemViewData> _itemViewData;
+    [SerializeField] private MenuItem _menuItemPrefab;
+
+    private List<MenuItem> _addedItems = new();
+   
+    public void DisplayWalletInfo(IReadOnlyDictionary<ItemType, int> wallet)
     {
-        [SerializeField] private RectTransform _content;
-        [FormerlySerializedAs("_itemData")] [SerializeField] private List<ItemViewData> _itemViewData;
-        [SerializeField] private MenuItem _menuItemPrefab;
-
-        private List<MenuItem> _addedItems = new();
-       
-        private void Awake()
+        foreach (KeyValuePair<ItemType,int> valuePair in wallet)
         {
-        
-        }
-
-        public void DisplayWalletInfo(IReadOnlyDictionary<ItemType, int> wallet)
-        {
-            foreach (KeyValuePair<ItemType,int> valuePair in wallet)
+            foreach (ItemViewData viewData in _itemViewData)
             {
-                foreach (ItemViewData viewData in _itemViewData)
+                if (valuePair.Key == viewData.type)
                 {
-                    if (valuePair.Key == viewData.type)
-                    {
-                        MenuItem newMenuItem = Object.Instantiate(_menuItemPrefab, _content);
-                        newMenuItem.GetComponent<MenuItem>().Initialize(viewData.sprite, viewData.type, valuePair.Value);
-                        _addedItems.Add(newMenuItem);
-                    }
+                    MenuItem newMenuItem = Object.Instantiate(_menuItemPrefab, _content);
+                    newMenuItem.GetComponent<MenuItem>().Initialize(viewData.sprite, viewData.type, valuePair.Value);
+                    _addedItems.Add(newMenuItem);
                 }
             }
         }
+    }
 
-        public void OnItemAmountAdded(ItemType type, int amount)
+    public void OnItemAmountChanged(ItemType type, int amount)
+    {
+        for (int i = 0; i < _addedItems.Count; i++)
         {
-            for (int i = 0; i < _addedItems.Count; i++)
-            {
-                if (_addedItems[i].Type == type)
-                    _addedItems[i].AddAmount(amount);
-                return;
-            }
-            
+            if (_addedItems[i].Type == type)
+                _addedItems[i].ChangeAmount(amount);
         }
     }
+}

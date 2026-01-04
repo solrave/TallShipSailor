@@ -23,7 +23,7 @@ public class UIView : MonoBehaviour
                 {
                     MenuItem newMenuItem = Object.Instantiate(_menuItemPrefab, _content);
                     newMenuItem.GetComponent<MenuItem>().Initialize(viewData.sprite, viewData.type, valuePair.Value);
-                    _addedItems.Add(newMenuItem);
+                    _addedItems.Add(newMenuItem);//
                 }
             }
         }

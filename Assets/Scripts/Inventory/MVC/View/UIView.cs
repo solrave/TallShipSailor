@@ -31,10 +31,10 @@ public class UIView : MonoBehaviour
 
     public void OnItemAmountChanged(ItemType type, int amount)
     {
-        for (int i = 0; i < _addedItems.Count; i++)
+        foreach (var item in _addedItems)
         {
-            if (_addedItems[i].Type == type)
-                _addedItems[i].ChangeAmount(amount);
+            if (item.Type == type)
+                item.ChangeAmount(amount);
         }
     }
 }
